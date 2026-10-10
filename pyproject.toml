@@ -1,6 +1,6 @@
 [project]
 name = "trie-index"
-version = "0.1.1"
+version = "0.1.2"
 description = "A prefix tree for fast autocomplete over a fixed vocabulary."
 requires-python = ">=3.10"
 dependencies = []
