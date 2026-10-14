@@ -28,3 +28,10 @@ The trade-off is memory: every token of every entry becomes a node. For a few th
 - `complete([])` returns the entire vocabulary, not an empty list.
 - Completions are ordered by child insertion order, not alphabetically. Insert your vocabulary in the order you want results emitted, or sort the returned list yourself.
 - Values default to `True`; pass an explicit `value` to `insert` if you need to attach a payload.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
